@@ -8,8 +8,6 @@ In case you wonder, I used Rust in 2021/2023 (solutions [here](https://github.co
 {history_tables}
 
 # Series Chart
-![Metrics](/cumulative-rank-frequency.svg)
-
 {history_charts}
 
 # Overall

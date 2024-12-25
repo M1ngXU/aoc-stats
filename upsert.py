@@ -208,11 +208,6 @@ def dashboard_history_charts(participations):
 	rank_buckets = get_rank_buckets()
 	chart_quantiles = [0, 25, 50, 75, 100]
 	res = '\n```mermaid'
-	res += '\nflowchart TD '
-	for y, c in zip(years, color_series):
-		res += f'\nstyle {y} fill:#{c},stroke:#333,stroke-width:2px,color:#fff'
-	res += '\n```'
-	res += '\n\n```mermaid'
 	res += '\n---'
 	res += '\nconfig:'
 	res += '\n themeVariables:'
@@ -232,6 +227,11 @@ def dashboard_history_charts(participations):
 			get_rank_frequency(get_participations_by_year(participations, y), r)
 			for r in rank_buckets
 		])
+	res += '\n```'
+	res += '\n\n```mermaid'
+	res += '\nflowchart TD '
+	for y, c in zip(years, color_series):
+		res += f'\nstyle {y} fill:#{c},stroke:#333,stroke-width:2px,color:#fff'
 	res += '\n```'
 	return res
 
